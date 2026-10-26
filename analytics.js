@@ -1,7 +1,7 @@
 // Google Analytics 4 + samþykki fyrir vafrakökum.
 // GA hleðst AÐEINS ef gestur ýtir á „Leyfa".
 (function () {
-  var GA_ID = ''; // Settu GA4 mælingarauðkennið hér, t.d. 'G-ABC123XYZ'
+  var GA_ID = 'G-THTY0LDSRG'; // Settu GA4 mælingarauðkennið hér, t.d. 'G-ABC123XYZ'
   if (!GA_ID) return;
 
   var KEY = 'bv-cookie-consent';
