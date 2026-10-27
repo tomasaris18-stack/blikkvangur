@@ -1,5 +1,5 @@
 // Google Analytics 4 + samþykki fyrir vafrakökum.
-// GA hleðst AÐEINS ef gestur ýtir á „Leyfa".
+// GA hleðst AÐEINS ef gestur ýtir á „Samþykkja". Báðir hnappar jafn áberandi (fjarskiptalög 70/2022).
 (function () {
   var GA_ID = 'G-THTY0LDSRG'; // Settu GA4 mælingarauðkennið hér, t.d. 'G-ABC123XYZ'
   if (!GA_ID) return;
@@ -28,8 +28,8 @@
       '#bv-consent a{color:#b8962e}' +
       '#bv-consent .bv-row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}' +
       '#bv-consent button{font:inherit;font-weight:600;padding:10px 18px;border-radius:4px;cursor:pointer;border:1px solid #b8962e}' +
-      '#bv-consent .bv-yes{background:#b8962e;color:#111210}' +
-      '#bv-consent .bv-no{background:transparent;color:#f7f5f0}';
+      '#bv-consent .bv-yes,#bv-consent .bv-no{background:transparent;color:#f7f5f0}' +
+      '#bv-consent button:hover{background:#b8962e;color:#111210}';
     document.head.appendChild(css);
     var box = document.createElement('div');
     box.id = 'bv-consent';
@@ -37,7 +37,7 @@
     box.setAttribute('aria-label', 'Vafrakökur');
     box.innerHTML =
       'Við notum vafrakökur til að telja heimsóknir og sjá hvað virkar á vefnum. <a href="/personuvernd">Nánar</a>' +
-      '<div class="bv-row"><button class="bv-yes" type="button">Leyfa</button><button class="bv-no" type="button">Hafna</button></div>';
+      '<div class="bv-row"><button class="bv-yes" type="button">Samþykkja</button><button class="bv-no" type="button">Hafna</button></div>';
     document.body.appendChild(box);
     box.querySelector('.bv-yes').onclick = function () { setChoice('yes'); box.remove(); loadGA(); };
     box.querySelector('.bv-no').onclick = function () { setChoice('no'); box.remove(); };
